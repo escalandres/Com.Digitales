@@ -13,10 +13,14 @@ def leyMiu(m0,mp):
     valorNivel = 0
     miu = float(input('\nIngrese el valor de Miu!\n\nMiu: '))
     mmp = math.fabs(m0/mp) ##valor absoluto de m/mp
-    sgn = np.sign(m0) ## funcion sgn(m)
-    leyMiu = (sgn/(1+math.log(1+miu))*math.log(1+(miu*mmp)))
-    valorNivel = leyMiu
-    imprimirValorNivel(valorNivel)
+    if mmp <= 1:
+        sgn = np.sign(m0) ## funcion sgn(m)
+        leyMiu = (sgn/(1+math.log(1+miu))*math.log(1+(miu*mmp)))
+        valorNivel = leyMiu
+        imprimirValorNivel(valorNivel)
+    else:
+        print("\nError, no se cumple la condicion!\n")
+        main()
 
 def leyA(m0,mp):
     valorNivel = 0

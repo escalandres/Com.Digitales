@@ -29,7 +29,7 @@ def leyA(m0,mp):
     mmp = math.fabs(m0/mp) ##valor absoluto de m/mp
     sgn = np.sign(m0) ## funcion sgn(m)
     if mmp <= cond1:
-        leyA1 = (vA*(1+math.log(vA)))*(mmp)
+        leyA1 = (vA/(1+math.log(vA)))*(m0/mp)
         valorNivel = leyA1
     elif cond1 <= mmp and mmp <= 1:
         leyA2 = (sgn/(1+math.log(vA))*(1+math.log(vA*mmp)))

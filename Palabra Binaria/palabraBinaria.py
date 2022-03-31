@@ -1,4 +1,6 @@
 ## Autor: Andres Rafael Escala Acosta
+## Conversion a palabra binaria en Compansion Analogica
+
 import os
 ##Creamos la tabla de segmentos
 #Dato0: segmento 0-7, #Dato1: binario, #Dato2 y Dato3: intervalo de voltaje(mV), #Dato 4: Tamano paso (mV)
@@ -46,7 +48,7 @@ def palabraBin():
             segmento = i
             segmentoBinario = tablaSegmentos[i][1]
 
-    nivel = round((diferenciaIntervalo)/tablaSegmentos[segmento][4])
+    nivel = int((diferenciaIntervalo)/tablaSegmentos[segmento][4])
     print("\nNivel paso: {0}\n".format(nivel))
     nivelBinario = tablaPasos[nivel][1]
     palabraBinaria = ""+variacion+segmentoBinario+nivelBinario
